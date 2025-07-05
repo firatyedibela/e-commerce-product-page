@@ -19,3 +19,24 @@
   src: url('/fonts/KumbhSans-VariableFont_YOPQ,wght.ttf')
     format('truetype-variations');
 }
+
+@layer components {
+  .text-preset-1 {
+    @apply text-[44px] leading-[48px] font-bold;
+  }
+  .text-preset-2 {
+    @apply text-[28px] leading-[32px] font-bold;
+  }
+  .text-preset-3 {
+    @apply text-[16px] leading-[26px] font-bold;
+  }
+  .text-preset-4 {
+    @apply text-[15px] leading-[26px];
+  }
+  .text-preset-5 {
+    @apply text-[13px] leading-[16px] tracking-[2px] font-bold;
+  }
+  .text-preset-6 {
+    @apply text-[12px] leading-[15px] tracking-[1.85px] font-bold;
+  }
+}
