@@ -52,9 +52,7 @@ export const Product = ({ product }: ProductProps) => {
 
         {/* Cart Control Section */}
         <div className="flex flex-col gap-4 md:gap-2 xl:gap-4 md:flex-row md:justify-between">
-          <div className="flex-1">
-            <QuantityBox />
-          </div>
+          <QuantityBox />
 
           <button
             type="button"
