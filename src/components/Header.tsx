@@ -7,9 +7,9 @@ import cart from '../assets/images/icon-cart.svg';
 
 export const Header = () => {
   return (
-    <header className="px-6 xs:px-0 lg:max-w-full flex justify-between items-center md:pb-8 md:border-b md:border-grey-100">
-      <div className="flex flex-row-reverse lg:flex-row items-start gap-4 justify-end">
-        <img src={logo} alt="Sneakers website logo" />
+    <header className="px-6 xs:px-0 xl:max-w-full flex justify-between items-center md:pb-8 md:border-b md:border-grey-100">
+      <div className="flex flex-row-reverse xl:flex-row items-start gap-4 xl:gap-16 justify-end">
+        <img className="xl:self-end" src={logo} alt="Sneakers website logo" />
         <nav>
           <MenuDesktop routes={routes} />
           <MenuMobile routes={routes} />
