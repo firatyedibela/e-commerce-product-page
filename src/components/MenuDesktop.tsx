@@ -1,7 +1,7 @@
-import type { Routes } from '../types/routes';
+import type { TRoutes } from '../types/routes';
 
 type MenuDesktopProps = {
-  routes: Routes;
+  routes: TRoutes;
 };
 
 export const MenuDesktop = ({ routes }: MenuDesktopProps) => {

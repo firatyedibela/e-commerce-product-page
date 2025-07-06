@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import type { Routes } from '../types/routes';
+import type { TRoutes } from '../types/routes';
 import hamburgerIcon from '../assets/images/icon-menu.svg';
 import closeIcon from '../assets/images/icon-close.svg';
 
 type MenuMobileProps = {
-  routes: Routes;
+  routes: TRoutes;
 };
 
 export const MenuMobile = ({ routes }: MenuMobileProps) => {
