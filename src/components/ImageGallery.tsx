@@ -16,12 +16,16 @@ export const ImageGallery = ({ className, images }: ImageGalleryProps) => {
   };
 
   return (
-    <div className={clsx(className, '')}>
+    <div className={clsx(className, 'flex-col gap-8')}>
       <div>
-        <img src={images[activeImageIndex].original} alt="" />
+        <img
+          className="rounded-[15px]"
+          src={images[activeImageIndex].original}
+          alt=""
+        />
       </div>
       <div>
-        <ul className="flex gap-8">
+        <ul className="flex justify-between">
           {images.map((img, idx) => (
             <li key={img.original}>
               <Thumbnail
