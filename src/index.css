@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+
 @theme {
   --font-main: 'Kumbh Sans';
 
