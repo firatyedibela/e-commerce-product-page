@@ -44,10 +44,14 @@ export const Product = ({ product }: ProductProps) => {
           <QuantityBox />
           <button
             type="button"
-            className="w-full py-4 flex items-center justify-center gap-4 button-primary "
+            className="w-full py-4 flex items-center justify-center gap-4 button-primary shadow-xl shadow-orange-500/35"
           >
-            <img src={cartIcon} alt="Shopping cart icon" />
-            <span className="leading-[26px]">Add to cart</span>
+            <img
+              className="filter-grey-950"
+              src={cartIcon}
+              alt="Shopping cart icon"
+            />
+            <span className="text-grey-950 leading-[26px]">Add to cart</span>
           </button>
         </div>
       </div>
