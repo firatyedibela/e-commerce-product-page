@@ -1,4 +1,5 @@
 import { MobileSwiper } from './MobileSwiper';
+import { ImageGallery } from './ImageGallery';
 import type { TProduct } from '../types/product';
 import { getDiscountedPrice } from '../utils/getDiscountedPrice';
 import { QuantityBox } from './QuantityBox';
@@ -10,28 +11,32 @@ type ProductProps = {
 
 export const Product = ({ product }: ProductProps) => {
   return (
-    <div className="flex flex-col gap-6 md:gap-12">
+    <div className="flex flex-col gap-6 md:gap-12 xl:flex-row xl:gap-[128px]">
       {/* Mobile Image Swiper */}
       <MobileSwiper className="xl:hidden" images={product.images} />
 
       {/* Desktop Image Gallery */}
+      <ImageGallery
+        className="hidden xl:flex xl:w-[448px]"
+        images={product.images}
+      />
 
       {/* Product Details Section */}
-      <div className="px-6 xs:px-0 flex flex-col gap-8 md:gap-6">
+      <div className="px-6 xs:px-0 flex flex-col gap-8 md:gap-6 xl:justify-center xl:w-[445px]">
         <div className="flex flex-col gap-4 md:gap-6">
           <p className="text-preset-6 uppercase text-grey-500 md:text-[13px] md:leading-auto">
             {product.manufacturer}{' '}
           </p>
-          <h1 className="text-preset-2 capitalize md:text-[44px] md:leading-[48px]">
+          <h1 className="text-preset-2 capitalize md:text-[44px] md:leading-[48px] xl:mb-2">
             {product.name}{' '}
           </h1>
-          <p className="text-preset-4 text-grey-500 md:text-[16px]">
+          <p className="text-preset-4 text-grey-500 md:text-[16px] xl:mb-2">
             {product.description}{' '}
           </p>
         </div>
 
         {/* Pricing Details Section */}
-        <div className="flex justify-between items-center md:flex-col md:items-start md:gap-2">
+        <div className="flex justify-between items-center md:flex-col md:items-start md:gap-2 xl:mb-2">
           <div className="flex gap-4">
             <span className="text-preset-2">
               ${getDiscountedPrice(product.price, product.discount).toFixed(2)}
@@ -46,11 +51,14 @@ export const Product = ({ product }: ProductProps) => {
         </div>
 
         {/* Cart Control Section */}
-        <div className="flex flex-col gap-4 md:gap-2 md:flex-row md:justify-between">
-          <QuantityBox />
+        <div className="flex flex-col gap-4 md:gap-2 xl:gap-4 md:flex-row md:justify-between">
+          <div className="flex-1">
+            <QuantityBox />
+          </div>
+
           <button
             type="button"
-            className="w-full py-4 flex items-center justify-center gap-4 button-primary shadow-2xl shadow-orange-500/50"
+            className="w-full xl:w-[272px] py-4 flex items-center justify-center gap-4 button-primary shadow-2xl shadow-orange-500/50 "
           >
             <img
               className="filter-grey-950"
