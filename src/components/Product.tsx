@@ -44,7 +44,7 @@ export const Product = ({ product }: ProductProps) => {
           <QuantityBox />
           <button
             type="button"
-            className="w-full py-4 flex items-center justify-center gap-4 button-primary shadow-xl shadow-orange-500/35"
+            className="w-full py-4 flex items-center justify-center gap-4 button-primary shadow-2xl shadow-orange-500/80"
           >
             <img
               className="filter-grey-950"
