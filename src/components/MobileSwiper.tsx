@@ -2,14 +2,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper/modules';
 import { NextButton } from './NextButton';
 import { PrevButton } from './PrevButton';
+import type { TImage } from '../types/product';
 
 type MobileSwiperProps = {
-  images: string[];
+  images: TImage[];
 };
 
 export const MobileSwiper = ({ images }: MobileSwiperProps) => {
   return (
-    <div className="relative">
+    <div className="relative xs:rounded-[15px] xs:overflow-hidden">
       <Swiper
         navigation={{
           nextEl: '.next',
@@ -21,8 +22,8 @@ export const MobileSwiper = ({ images }: MobileSwiperProps) => {
         {images.map((img) => (
           <SwiperSlide>
             <img
-              className="w-full h-[300px] object-cover object-top md:h-[290px] md:object-[50%_65%] xs:rounded-[15px]"
-              src={img}
+              className={`w-full h-[300px] object-cover object-top md:h-[290px] md:object-${img.tabletPosition}`}
+              src={img.original}
             ></img>
           </SwiperSlide>
         ))}

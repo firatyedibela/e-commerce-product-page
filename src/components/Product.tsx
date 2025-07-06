@@ -10,22 +10,26 @@ type ProductProps = {
 
 export const Product = ({ product }: ProductProps) => {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 md:gap-12">
       {/* Image Swiper */}
-      <MobileSwiper images={product.images.map((image) => image.original)} />
+      <MobileSwiper images={product.images} />
 
       {/* Product Details Section */}
-      <div className="px-6 xs:px-0 flex flex-col gap-8">
-        <div className="flex flex-col gap-4">
-          <p className="text-preset-6 uppercase text-grey-500">
+      <div className="px-6 xs:px-0 flex flex-col gap-8 md:gap-6">
+        <div className="flex flex-col gap-4 md:gap-6">
+          <p className="text-preset-6 uppercase text-grey-500 md:text-[13px] md:leading-auto">
             {product.manufacturer}{' '}
           </p>
-          <h1 className="text-preset-2 capitalize">{product.name} </h1>
-          <p className="text-preset-4 text-grey-500">{product.description} </p>
+          <h1 className="text-preset-2 capitalize md:text-[44px] md:leading-[48px]">
+            {product.name}{' '}
+          </h1>
+          <p className="text-preset-4 text-grey-500 md:text-[16px]">
+            {product.description}{' '}
+          </p>
         </div>
 
         {/* Pricing Details Section */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center md:flex-col md:items-start md:gap-2">
           <div className="flex gap-4">
             <span className="text-preset-2">
               ${getDiscountedPrice(product.price, product.discount).toFixed(2)}
@@ -40,7 +44,7 @@ export const Product = ({ product }: ProductProps) => {
         </div>
 
         {/* Cart Control Section */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:gap-2 md:flex-row md:justify-between">
           <QuantityBox />
           <button
             type="button"
