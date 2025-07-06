@@ -1,8 +1,11 @@
+export type TImage = {
+  original: string;
+  thumbnail: string;
+  tabletPosition: string;
+};
+
 export type TProduct = {
-  images: {
-    original: string;
-    thumbnail: string;
-  }[];
+  images: TImage[];
   manufacturer: string;
   name: string;
   description: string;
