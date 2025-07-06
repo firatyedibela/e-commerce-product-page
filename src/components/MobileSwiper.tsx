@@ -24,10 +24,10 @@ export const MobileSwiper = () => {
             ></img>
           </SwiperSlide>
         ))}
-        <div className="w-10 h-10 bg-white rounded-full prev absolute top-1/2 -translate-y-1/2 left-4 z-5">
+        <div className="w-10 h-10 bg-white rounded-full prev absolute top-1/2 -translate-y-3/4 left-4 z-5">
           <PrevButton />
         </div>
-        <div className="w-10 h-10 bg-white rounded-full next absolute top-1/2 -translate-y-1/2 right-4 z-5">
+        <div className="w-10 h-10 bg-white rounded-full next absolute top-1/2 -translate-y-3/4 right-4 z-5">
           <NextButton />
         </div>
       </Swiper>
