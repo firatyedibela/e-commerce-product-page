@@ -9,7 +9,9 @@ export const MenuDesktop = ({ routes }: MenuDesktopProps) => {
     <ul className="hidden xl:flex items-center gap-8 text-preset-4 text-grey-500">
       {routes.map((route) => (
         <li key={route.name}>
-          <a href={route.href}>{route.name}</a>
+          <a className="capitalize" href={route.href}>
+            {route.name}
+          </a>
         </li>
       ))}
     </ul>
