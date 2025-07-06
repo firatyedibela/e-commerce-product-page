@@ -11,7 +11,7 @@ type ProductProps = {
 
 export const Product = ({ product }: ProductProps) => {
   return (
-    <div className="flex flex-col gap-6 md:gap-12 xl:flex-row xl:gap-[128px]">
+    <div className="flex flex-col gap-6 md:gap-12 xl:flex-row xl:gap-[128px] xl:justify-center">
       {/* Mobile Image Swiper */}
       <MobileSwiper className="xl:hidden" images={product.images} />
 
