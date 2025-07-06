@@ -1,0 +1,36 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, A11y } from 'swiper/modules';
+import { NextButton } from './NextButton';
+import { PrevButton } from './PrevButton';
+
+import { product } from '../product';
+
+export const MobileSwiper = () => {
+  return (
+    <div className="relative">
+      <Swiper
+        navigation={{
+          nextEl: '.next',
+          prevEl: '.prev',
+        }}
+        modules={[Navigation, A11y]}
+        slidesPerView={1}
+      >
+        {product.images.map((img) => (
+          <SwiperSlide>
+            <img
+              className="w-full h-[300px] object-cover md:h-[290px] md:object-[50%_65%]"
+              src={img.original}
+            ></img>
+          </SwiperSlide>
+        ))}
+        <div className="w-10 h-10 bg-white rounded-full prev absolute top-1/2 -translate-y-1/2 left-4 z-5">
+          <PrevButton />
+        </div>
+        <div className="w-10 h-10 bg-white rounded-full next absolute top-1/2 -translate-y-1/2 right-4 z-5">
+          <NextButton />
+        </div>
+      </Swiper>
+    </div>
+  );
+};
