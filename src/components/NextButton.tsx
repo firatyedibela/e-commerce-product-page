@@ -1,5 +1,3 @@
-import nextIcon from '../assets/images/icon-next.svg';
-
 export const NextButton = () => {
   return (
     <button

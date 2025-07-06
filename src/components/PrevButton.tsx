@@ -1,5 +1,3 @@
-import previousIcon from '../assets/images/icon-previous.svg';
-
 export const PrevButton = () => {
   return (
     <button
