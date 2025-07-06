@@ -46,4 +46,9 @@
   .button-primary {
     @apply bg-orange-500 text-[16px] leading-[26px] font-bold flex items-center justify-center rounded-[10px] cursor-pointer;
   }
+
+  .filter-grey-950 {
+    filter: brightness(0) saturate(100%) invert(11%) sepia(4%) saturate(2164%)
+      hue-rotate(182deg) brightness(91%) contrast(94%);
+  }
 }
