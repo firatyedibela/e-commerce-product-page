@@ -7,7 +7,7 @@ import cart from '../assets/images/icon-cart.svg';
 
 export const Header = () => {
   return (
-    <header className="m-auto max-w-[327px] lg:max-w-full mt-5 mb-6 flex justify-between">
+    <header className="m-auto px-6 xs:px-0 lg:max-w-full mt-5 mb-6 flex justify-between">
       <div className="flex flex-row-reverse lg:flex-row items-start gap-4 justify-end">
         <img src={logo} alt="Sneakers website logo" />
         <nav>

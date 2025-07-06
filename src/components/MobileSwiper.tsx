@@ -21,7 +21,7 @@ export const MobileSwiper = ({ images }: MobileSwiperProps) => {
         {images.map((img) => (
           <SwiperSlide>
             <img
-              className="w-full h-[300px] object-cover md:h-[290px] md:object-[50%_65%]"
+              className="w-full h-[300px] object-cover object-top md:h-[290px] md:object-[50%_65%] xs:rounded-[15px]"
               src={img}
             ></img>
           </SwiperSlide>

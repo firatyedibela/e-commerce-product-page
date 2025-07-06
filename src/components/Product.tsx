@@ -15,7 +15,7 @@ export const Product = ({ product }: ProductProps) => {
       <MobileSwiper images={product.images.map((image) => image.original)} />
 
       {/* Product Details Section */}
-      <div className="px-6 flex flex-col gap-8">
+      <div className="px-6 xs:px-0 flex flex-col gap-8">
         <div className="flex flex-col gap-4">
           <p className="text-preset-6 uppercase text-grey-500">
             {product.manufacturer}{' '}
