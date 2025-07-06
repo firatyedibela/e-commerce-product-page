@@ -1,4 +1,4 @@
-import type { Routes } from '../routes';
+import type { Routes } from '../types/routes';
 
 type MenuDesktopProps = {
   routes: Routes;

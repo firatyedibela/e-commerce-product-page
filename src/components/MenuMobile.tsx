@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Routes } from '../routes';
+import type { Routes } from '../types/routes';
 import hamburgerIcon from '../assets/images/icon-menu.svg';
 import closeIcon from '../assets/images/icon-close.svg';
 
