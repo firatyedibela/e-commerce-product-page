@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper/modules';
 import { NavButton } from './NavButton';
 import type { TImage } from '../types/product';
+import clsx from 'clsx';
 
 type MobileSwiperProps = {
   images: TImage[];
@@ -10,7 +11,12 @@ type MobileSwiperProps = {
 
 export const MobileSwiper = ({ images, className }: MobileSwiperProps) => {
   return (
-    <div className="relative xs:rounded-[15px] xs:overflow-hidden">
+    <div
+      className={clsx(
+        'relative xs:rounded-[15px] xs:overflow-hidden',
+        className
+      )}
+    >
       <Swiper
         navigation={{
           nextEl: '.next',
