@@ -6,9 +6,10 @@ import type { TImage } from '../types/product';
 
 type MobileSwiperProps = {
   images: TImage[];
+  className?: string;
 };
 
-export const MobileSwiper = ({ images }: MobileSwiperProps) => {
+export const MobileSwiper = ({ images, className }: MobileSwiperProps) => {
   return (
     <div className="relative xs:rounded-[15px] xs:overflow-hidden">
       <Swiper
@@ -22,7 +23,7 @@ export const MobileSwiper = ({ images }: MobileSwiperProps) => {
         {images.map((img) => (
           <SwiperSlide>
             <img
-              className={`w-full h-[300px] object-cover object-top md:h-[290px] md:object-${img.tabletPosition}`}
+              className={`w-full h-[300px] object-cover object-top md:h-[290px] md:object-${img.tabletPosition} ${className}`}
               src={img.original}
             ></img>
           </SwiperSlide>
