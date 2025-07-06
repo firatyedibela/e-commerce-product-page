@@ -44,6 +44,6 @@
   }
 
   .button-primary {
-    @apply h-[56px] bg-orange-500 text-[16px] leading-[26px] font-bold flex items-center justify-center rounded-[10px] cursor-pointer;
+    @apply bg-orange-500 text-[16px] leading-[26px] font-bold flex items-center justify-center rounded-[10px] cursor-pointer;
   }
 }
