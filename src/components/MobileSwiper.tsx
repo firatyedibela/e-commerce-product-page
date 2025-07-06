@@ -3,9 +3,11 @@ import { Navigation, A11y } from 'swiper/modules';
 import { NextButton } from './NextButton';
 import { PrevButton } from './PrevButton';
 
-import { product } from '../product';
+type MobileSwiperProps = {
+  images: string[];
+};
 
-export const MobileSwiper = () => {
+export const MobileSwiper = ({ images }: MobileSwiperProps) => {
   return (
     <div className="relative">
       <Swiper
@@ -16,11 +18,11 @@ export const MobileSwiper = () => {
         modules={[Navigation, A11y]}
         slidesPerView={1}
       >
-        {product.images.map((img) => (
+        {images.map((img) => (
           <SwiperSlide>
             <img
               className="w-full h-[300px] object-cover md:h-[290px] md:object-[50%_65%]"
-              src={img.original}
+              src={img}
             ></img>
           </SwiperSlide>
         ))}
