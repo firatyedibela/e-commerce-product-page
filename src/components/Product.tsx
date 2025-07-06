@@ -17,20 +17,26 @@ export const Product = ({ product }: ProductProps) => {
       {/* Product Details Section */}
       <div className="px-6 flex flex-col gap-8">
         <div className="flex flex-col gap-4">
-          <p>{product.manufacturer} </p>
-          <h1>{product.name} </h1>
-          <p>{product.description} </p>
+          <p className="text-preset-6 uppercase text-grey-500">
+            {product.manufacturer}{' '}
+          </p>
+          <h1 className="text-preset-2 capitalize">{product.name} </h1>
+          <p className="text-preset-4 text-grey-500">{product.description} </p>
         </div>
 
         {/* Pricing Details Section */}
         <div className="flex justify-between items-center">
           <div className="flex gap-4">
-            <span>
+            <span className="text-preset-2">
               ${getDiscountedPrice(product.price, product.discount).toFixed(2)}
             </span>
-            <span>{product.discount * 100}%</span>
+            <span className="text-preset-3 text-white bg-grey-950 self-start px-[9.5px] rounded-md">
+              {product.discount * 100}%
+            </span>
           </div>
-          <span>${product.price.toFixed(2)}</span>
+          <span className="text-preset-3 text-grey-500 line-through">
+            ${product.price.toFixed(2)}
+          </span>
         </div>
 
         {/* Cart Control Section */}
