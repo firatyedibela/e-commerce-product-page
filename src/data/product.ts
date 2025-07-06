@@ -14,18 +14,22 @@ export const product: TProduct = {
     {
       original: product1,
       thumbnail: product1Thumbnail,
+      tabletPosition: '[50%_65%]',
     },
     {
       original: product2,
       thumbnail: product2Thumbnail,
+      tabletPosition: 'top',
     },
     {
       original: product3,
       thumbnail: product3Thumbnail,
+      tabletPosition: '[50%_10%]',
     },
     {
       original: product4,
       thumbnail: product4Thumbnail,
+      tabletPosition: '[50%_25%]',
     },
   ],
   manufacturer: 'sneaker company',
