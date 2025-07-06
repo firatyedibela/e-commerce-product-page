@@ -1,6 +1,6 @@
 import { MenuDesktop } from './MenuDesktop';
 import { MenuMobile } from './MenuMobile';
-import { routes } from '../routes';
+import { routes } from '../data/routes';
 import logo from '../assets/images/logo.svg';
 import avatar from '../assets/images/image-avatar.png';
 import cart from '../assets/images/icon-cart.svg';
