@@ -4,6 +4,8 @@
 @import 'swiper/css/navigation';
 
 @theme {
+  --breakpoint-xs: 25rem;
+
   --font-main: 'Kumbh Sans';
 
   --color-grey-950: #1d2026;
