@@ -11,7 +11,7 @@ export const MenuMobile = ({ routes }: MenuMobileProps) => {
   const [isOpen, setOpen] = useState<boolean>(false);
 
   return (
-    <div className="lg:hidden flex items-end h-[20px]">
+    <div className="xl:hidden flex items-end h-[20px]">
       <button className="cursor-pointer z-21" onClick={() => setOpen(!isOpen)}>
         <img src={!isOpen ? hamburgerIcon : closeIcon} alt="Menu icon" />
       </button>
