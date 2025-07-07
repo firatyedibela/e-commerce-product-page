@@ -61,11 +61,11 @@ export const Lightbox = ({
       <div className="w-[550px] relative" onClick={(e) => e.stopPropagation()}>
         <NavButton
           direction="prev"
-          className="lightboxPrev w-14 h-14 translate-y-[-100px] left-[-20px]"
+          className="lightboxPrev w-14 h-14 translate-y-[-105px] left-[-20px]"
         />
         <NavButton
           direction="next"
-          className="lightboxNext w-14 h-14 translate-y-[-100px] right-[-20px]"
+          className="lightboxNext w-14 h-14 translate-y-[-105px] right-[-20px]"
         />
         <button
           onClick={onClose}
