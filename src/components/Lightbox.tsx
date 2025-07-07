@@ -19,6 +19,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import { Navigation, Thumbs } from 'swiper/modules';
 
+import { NavButton } from './NavButton';
+
 type LightboxProps = {
   images: TImage[]; // Array of images to display
   currentImageIndex: number; // Index of initially selected image from parent
@@ -55,7 +57,7 @@ export const Lightbox = ({
       onClick={onClose}
     >
       {/* Lightbox container, stop propagation otherwise clicks close lightbox */}
-      <div className="w-[550px]" onClick={(e) => e.stopPropagation()}>
+      <div className="w-[550px] relative" onClick={(e) => e.stopPropagation()}>
         {/* This is main swiper, displaying large(original) images */}
         <Swiper
           // When swiper is initialized, jump immediately to the selected image we get from parent, set speed to 0 to prevent animation
@@ -66,8 +68,11 @@ export const Lightbox = ({
           onSlideChange={(swiper) => {
             setSelectedImageIndex(swiper.activeIndex);
           }}
+          navigation={{
+            nextEl: '.lightboxNext',
+            prevEl: '.lightboxPrev',
+          }}
           slidesPerView={1}
-          navigation
           modules={[Navigation, Thumbs]} // Register necessary swiper modules
           thumbs={{ swiper: thumbnailSwiper }} // Connect thumbnail swiper
         >
@@ -92,6 +97,8 @@ export const Lightbox = ({
             </SwiperSlide>
           ))}
         </Swiper>
+        <NavButton direction="prev" className="lightboxPrev" />
+        <NavButton direction="next" className="lightboxNext" />
       </div>
     </div>,
     lightboxRoot as Element
