@@ -54,17 +54,33 @@ export const Lightbox = ({
   return createPortal(
     // Overlay covers the entire screen, clicking it (outside the lightbox) closes the lightbox
     <div
-      className="overlay fixed inset-0 bg-lightbox-overlay"
+      className="overlay hidden fixed inset-0 bg-lightbox-overlay xl:flex items-center justify-center"
       onClick={onClose}
     >
       {/* Lightbox container, stop propagation otherwise clicks close lightbox */}
       <div className="w-[550px] relative" onClick={(e) => e.stopPropagation()}>
-        <button className="cursor-pointer">
-          <img className="close-icon" src={closeIcon} alt="Close icon" />
+        <NavButton
+          direction="prev"
+          className="lightboxPrev w-14 h-14 translate-y-[-100px] left-[-20px]"
+        />
+        <NavButton
+          direction="next"
+          className="lightboxNext w-14 h-14 translate-y-[-100px] right-[-20px]"
+        />
+        <button
+          onClick={onClose}
+          className="absolute z-10 right-0 -top-10 cursor-pointer mb-6"
+        >
+          <img
+            className="close-icon w-5 h-5"
+            src={closeIcon}
+            alt="Close icon"
+          />
         </button>
 
         {/* This is main swiper, displaying large(original) images */}
         <Swiper
+          className="mb-10"
           // When swiper is initialized, jump immediately to the selected image we get from parent, set speed to 0 to prevent animation
           onSwiper={(swiper) => {
             swiper.slideTo(currentImageIndex, 0);
@@ -83,13 +99,21 @@ export const Lightbox = ({
         >
           {images.map((img) => (
             <SwiperSlide>
-              <img src={img.original} alt=""></img>
+              <img
+                className="max-w-[550px] rounded-[15px]"
+                src={img.original}
+                alt=""
+              />
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* Thumbnail swiper to display all thumbnails in a row */}
-        <Swiper onSwiper={setThumbnailSwiper} slidesPerView={images.length}>
+        <Swiper
+          id="thumbnail-swiper"
+          onSwiper={setThumbnailSwiper}
+          slidesPerView={images.length}
+        >
           {images.map((img, idx) => (
             <SwiperSlide>
               <Thumbnail
@@ -102,8 +126,6 @@ export const Lightbox = ({
             </SwiperSlide>
           ))}
         </Swiper>
-        <NavButton direction="prev" className="lightboxPrev" />
-        <NavButton direction="next" className="lightboxNext" />
       </div>
     </div>,
     lightboxRoot as Element
