@@ -26,9 +26,9 @@ export const MobileSwiper = ({ images, className }: MobileSwiperProps) => {
         slidesPerView={1}
       >
         {images.map((img) => (
-          <SwiperSlide>
+          <SwiperSlide className="mobile-swiper-image-container">
             <img
-              className={`w-full h-[300px] object-cover object-top md:h-[290px] md:object-${img.tabletPosition} ${className}`}
+              className={`w-full h-[300px] object-cover object-top md:h-[290px] ${className}`}
               src={img.original}
             ></img>
           </SwiperSlide>

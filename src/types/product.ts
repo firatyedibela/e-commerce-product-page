@@ -1,7 +1,6 @@
 export type TImage = {
   original: string;
   thumbnail: string;
-  tabletPosition: string;
 };
 
 export type TProduct = {
