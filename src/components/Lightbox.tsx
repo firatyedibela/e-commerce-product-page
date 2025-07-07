@@ -14,6 +14,7 @@ import { createPortal } from 'react-dom';
 import { useState } from 'react';
 import { Thumbnail } from './Thumbnail';
 import type { TImage } from '../types/product';
+import closeIcon from '../assets/images/icon-close.svg';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
@@ -58,6 +59,10 @@ export const Lightbox = ({
     >
       {/* Lightbox container, stop propagation otherwise clicks close lightbox */}
       <div className="w-[550px] relative" onClick={(e) => e.stopPropagation()}>
+        <button className="cursor-pointer">
+          <img className="close-icon" src={closeIcon} alt="Close icon" />
+        </button>
+
         {/* This is main swiper, displaying large(original) images */}
         <Swiper
           // When swiper is initialized, jump immediately to the selected image we get from parent, set speed to 0 to prevent animation

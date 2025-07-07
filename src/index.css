@@ -79,3 +79,14 @@
 .mobile-swiper-image-container:nth-child(4) > img {
   object-position: 50% 20%;
 }
+
+.close-icon {
+  transition: all 0.15;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(10%) saturate(0%)
+    hue-rotate(91deg) brightness(104%) contrast(104%);
+}
+
+.close-icon:hover {
+  filter: brightness(0) saturate(100%) invert(50%) sepia(73%) saturate(1189%)
+    hue-rotate(346deg) brightness(103%) contrast(103%);
+}
