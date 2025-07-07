@@ -63,3 +63,19 @@
       hue-rotate(4deg) brightness(97%) contrast(90%);
   }
 }
+
+.mobile-swiper-image-container:nth-child(1) > img {
+  object-position: 50% 65%;
+}
+
+.mobile-swiper-image-container:nth-child(2) > img {
+  object-position: top;
+}
+
+.mobile-swiper-image-container:nth-child(3) > img {
+  object-position: 50% 10%;
+}
+
+.mobile-swiper-image-container:nth-child(4) > img {
+  object-position: 50% 20%;
+}
