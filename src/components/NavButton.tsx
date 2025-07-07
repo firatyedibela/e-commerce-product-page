@@ -44,7 +44,7 @@ const NavSvg = ({ next }: NavSvgProps) => {
   ) : (
     <svg
       className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-      width="9"
+      width="10"
       height="14"
       viewBox="0 0 9 14"
       fill="none"
