@@ -80,7 +80,7 @@ export const Lightbox = ({
 
         {/* This is main swiper, displaying large(original) images */}
         <Swiper
-          className="mb-10"
+          className="mb-10 rounded-[15px] overflow-hidden"
           // When swiper is initialized, jump immediately to the selected image we get from parent, set speed to 0 to prevent animation
           onSwiper={(swiper) => {
             swiper.slideTo(currentImageIndex, 0);
@@ -99,11 +99,7 @@ export const Lightbox = ({
         >
           {images.map((img) => (
             <SwiperSlide>
-              <img
-                className="max-w-[550px] rounded-[15px]"
-                src={img.original}
-                alt=""
-              />
+              <img className="max-w-[550px] " src={img.original} alt="" />
             </SwiperSlide>
           ))}
         </Swiper>
