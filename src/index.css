@@ -18,7 +18,7 @@
   --color-orange-500: #ff7e1b;
   --color-orange-300: #ffab6a;
 
-  --color-lightbox-overlay: rgba(0, 0, 0, 0.5);
+  --color-lightbox-overlay: rgba(0, 0, 0, 0.8);
 }
 
 @font-face {
