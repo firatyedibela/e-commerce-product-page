@@ -90,3 +90,13 @@
   filter: brightness(0) saturate(100%) invert(50%) sepia(73%) saturate(1189%)
     hue-rotate(346deg) brightness(103%) contrast(103%);
 }
+
+#thumbnail-swiper > .swiper-wrapper > .swiper-slide {
+  width: auto !important;
+}
+
+#thumbnail-swiper > .swiper-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
