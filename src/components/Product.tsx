@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { MobileSwiper } from './MobileSwiper';
 import { ImageGallery } from './ImageGallery';
 import type { TProduct } from '../types/product';
@@ -10,6 +12,16 @@ type ProductProps = {
 };
 
 export const Product = ({ product }: ProductProps) => {
+  const [quantity, setQuantity] = useState<number>(0);
+
+  const handleIncrease = () => {
+    setQuantity((prev) => prev + 1);
+  };
+
+  const handleDecrease = () => {
+    setQuantity((prev) => (prev > 0 ? prev - 1 : 0));
+  };
+
   return (
     <div className="flex flex-col gap-6 md:gap-12 xl:flex-row xl:gap-[128px] xl:justify-center">
       {/* Mobile Image Swiper */}
@@ -52,7 +64,11 @@ export const Product = ({ product }: ProductProps) => {
 
         {/* Cart Control Section */}
         <div className="flex flex-col gap-4 md:gap-2 xl:gap-4 md:flex-row md:justify-between">
-          <QuantityBox />
+          <QuantityBox
+            quantity={quantity}
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+          />
 
           <button
             type="button"
