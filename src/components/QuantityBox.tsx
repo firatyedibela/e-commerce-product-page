@@ -1,6 +1,5 @@
 import iconMinus from '../assets/images/icon-minus.svg';
 import iconPlus from '../assets/images/icon-plus.svg';
-import { useState } from 'react';
 
 type QuantityBoxProps = {
   quantity: number;
