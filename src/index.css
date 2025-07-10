@@ -29,6 +29,11 @@
     format('truetype-variations');
 }
 
+#lightbox-root {
+  position: relative;
+  z-index: 20;
+}
+
 @layer components {
   .text-preset-1 {
     @apply text-[44px] leading-[48px] font-bold;
