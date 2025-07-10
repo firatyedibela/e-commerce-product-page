@@ -2,10 +2,15 @@ import { useState } from 'react';
 import { CartItem } from './CartItem';
 import { useCart } from '../context/CartContext';
 import cart from '../assets/images/icon-cart.svg';
+import { useClickAway } from '@uidotdev/usehooks';
 
 export const Cart = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
   const { cartItems, getTotalItems } = useCart();
+
+  const ref = useClickAway<HTMLDivElement>(() => {
+    setOpen(false);
+  });
 
   const handleCartClick = () => {
     setOpen((prev) => !prev);
@@ -24,7 +29,10 @@ export const Cart = () => {
         )}
       </button>
       {isOpen && (
-        <div className="w-[360px] h-[256px] bg-white rounded-[10px] py-6 shadow-2xl absolute top-[57px] left-2 md:top-[66px] md:-translate-x-1/2 flex flex-col gap-6">
+        <div
+          ref={ref}
+          className="w-[360px] h-[256px] bg-white rounded-[10px] py-6 shadow-2xl absolute top-[57px] left-2 md:top-[66px] md:-translate-x-1/2 flex flex-col gap-6"
+        >
           <div className="px-3">
             <span className="text-preset-3 text-grey-950">Cart</span>
           </div>
