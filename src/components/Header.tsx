@@ -19,7 +19,7 @@ export const Header = () => {
         <Cart />
         <button className="cursor-pointer">
           <img
-            className="w-6 h-6 md:w-[50px] md:h-[50px]"
+            className="w-6 h-6 md:w-[50px] md:h-[50px] border-2 rounded-full border-transparent hover:border-orange-500 transition-all duration-150"
             src={avatar}
             alt="Avatar icon"
           />
