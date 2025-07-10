@@ -29,17 +29,21 @@ export const Cart = () => {
             <span className="text-preset-3 text-grey-950">Cart</span>
           </div>
           <div className="h-[1px] w-full bg-grey-100"></div>
-          {cartItems.length > 0 ? (
-            <ul>
-              {cartItems.map((item) => (
-                <li key={item.name}>
-                  <CartItem item={item} />
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Your cart is empty.</p>
-          )}
+          <div className="relative h-full">
+            {cartItems.length > 0 ? (
+              <ul>
+                {cartItems.map((item) => (
+                  <li key={item.name}>
+                    <CartItem item={item} />
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-preset-3 text-grey-500">
+                Your cart is empty.
+              </p>
+            )}
+          </div>
         </div>
       )}
     </div>
