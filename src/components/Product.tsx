@@ -91,7 +91,7 @@ export const Product = ({ product }: ProductProps) => {
           <button
             type="button"
             onClick={handleAddToCart}
-            className="w-full xl:w-[272px] py-4 flex items-center justify-center gap-4 button-primary shadow-2xl shadow-orange-500/50"
+            className="w-full xl:w-[272px] py-4 flex items-center justify-center gap-4 button-primary shadow-2xl shadow-orange-500/50 hover:bg-orange-300 transition-all duration-150"
           >
             <img
               className="filter-grey-950"

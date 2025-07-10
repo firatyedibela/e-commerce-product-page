@@ -38,7 +38,9 @@ export const CartItem = ({ item }: CartItemProps) => {
           </button>
         </div>
       </div>
-      <button className="w-[312px] button-primary py-[15px]">Checkout</button>
+      <button className="w-[312px] button-primary py-[15px] hover:bg-orange-300 transition-all duration-150">
+        Checkout
+      </button>
     </div>
   );
 };

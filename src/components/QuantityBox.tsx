@@ -17,7 +17,7 @@ export const QuantityBox = ({
       <button
         type="button"
         aria-label="Decrease item quantity by 1"
-        className="cursor-pointer px-2 py-2"
+        className="quantity-btn cursor-pointer px-2 py-2"
         onClick={onDecrease}
       >
         <img src={iconMinus} alt="Minus icon" />
@@ -32,7 +32,7 @@ export const QuantityBox = ({
       <button
         type="button"
         aria-label="Increase item quantity by 1"
-        className="cursor-pointer px-2 py-2"
+        className="quantity-btn cursor-pointer px-2 py-2"
         onClick={onIncrease}
       >
         <img src={iconPlus} alt="Plus icon" />

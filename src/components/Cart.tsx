@@ -14,7 +14,7 @@ export const Cart = () => {
   return (
     <div className="flex">
       <button onClick={handleCartClick} className="cursor-pointer relative">
-        <img src={cart} alt="Shopping cart icon" />
+        <img className="cart-icon" src={cart} alt="Shopping cart icon" />
         {cartItems.length > 0 && (
           <div className="w-[19px] h-[13px] rounded-[6.5px] bg-orange-500 flex items-center justify-center absolute -top-1 -right-1">
             <span className="font-bold text-[10px] text-white">

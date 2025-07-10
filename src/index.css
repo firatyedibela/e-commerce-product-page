@@ -96,6 +96,16 @@
     hue-rotate(346deg) brightness(103%) contrast(103%);
 }
 
+.quantity-btn:hover > img {
+  filter: brightness(0) saturate(100%) invert(80%) sepia(69%) saturate(643%)
+    hue-rotate(311deg) brightness(101%) contrast(101%);
+}
+
+.cart-icon:hover {
+  filter: brightness(0) saturate(100%) invert(10%) sepia(9%) saturate(1113%)
+    hue-rotate(182deg) brightness(102%) contrast(94%);
+}
+
 #thumbnail-swiper > .swiper-wrapper > .swiper-slide {
   width: auto !important;
 }
