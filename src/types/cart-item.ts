@@ -1,4 +1,4 @@
-export type CartItem = {
+export type TCartItem = {
   name: string;
   image: string;
   finalPrice: number;
