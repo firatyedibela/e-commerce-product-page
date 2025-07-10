@@ -24,7 +24,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     if (itemIdx !== -1) {
       cartItems[itemIdx].quantity += newItem.quantity;
     } else {
-      cartItems.push(newItem);
+      setCartItems((prev) => [...prev, newItem]);
     }
   };
 
