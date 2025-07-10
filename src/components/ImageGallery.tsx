@@ -32,7 +32,7 @@ export const ImageGallery = ({ className, images }: ImageGalleryProps) => {
       )}
       <div>
         <img
-          className="rounded-[15px]"
+          className="rounded-[15px] cursor-pointer hover:shadow-xl transition-all duration-300"
           src={images[activeImageIndex].original}
           alt=""
           onClick={() => setLightbox(true)}
