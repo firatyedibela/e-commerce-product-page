@@ -5,12 +5,14 @@ type CartContextType = {
   cartItems: TCartItem[];
   addToCart: (newItem: TCartItem) => void;
   removeFromCart: (itemName: string) => void;
+  getTotalItems: () => number;
 };
 
 const DefaultCartContext = {
   cartItems: [],
   addToCart: () => {},
   removeFromCart: () => {},
+  getTotalItems: () => 0,
 };
 
 const CartContext = createContext<CartContextType>(DefaultCartContext);
@@ -32,8 +34,14 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     console.log('Removing from cart: ' + itemName);
   };
 
+  const getTotalItems = (): number => {
+    return cartItems.reduce((total, current) => total + current.quantity, 0);
+  };
+
   return (
-    <CartContext value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext
+      value={{ cartItems, addToCart, removeFromCart, getTotalItems }}
+    >
       {children}
     </CartContext>
   );
