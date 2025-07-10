@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { CartItem } from './CartItem';
+import { useCart } from '../context/CartContext';
 import cart from '../assets/images/icon-cart.svg';
-import { product } from '../data/product';
-import deleteIcon from '../assets/images/icon-delete.svg';
 
 export const Cart = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
+  const { cartItems, getTotalItems } = useCart();
 
   const handleCartClick = () => {
     setOpen((prev) => !prev);
@@ -12,8 +13,15 @@ export const Cart = () => {
 
   return (
     <div className="flex">
-      <button onClick={handleCartClick} className="cursor-pointer">
+      <button onClick={handleCartClick} className="cursor-pointer relative">
         <img src={cart} alt="Shopping cart icon" />
+        {cartItems.length > 0 && (
+          <div className="w-[19px] h-[13px] rounded-[6.5px] bg-orange-500 flex items-center justify-center absolute -top-1 -right-1">
+            <span className="font-bold text-[10px] text-white">
+              {getTotalItems()}
+            </span>
+          </div>
+        )}
       </button>
       {isOpen && (
         <div className="w-[360px] bg-white rounded-[10px] shadow-2xl absolute top-[57px] left-2 md:top-[66px] md:-translate-x-1/2 py-6 flex flex-col gap-6">
@@ -21,36 +29,17 @@ export const Cart = () => {
             <span className="text-preset-3 text-grey-950">Cart</span>
           </div>
           <div className="h-[1px] w-full bg-grey-100"></div>
-          <div className="flex flex-col gap-6 items-center">
-            <div className="flex gap-4 py-[1.5px]">
-              <div className="flex gap-4">
-                <img
-                  className="w-[50px] h-[50px] rounded-[4px]"
-                  src={product.images[0].thumbnail}
-                  alt=""
-                />
-                <div className="flex flex-col">
-                  <span className="capitalize text-grey-500">
-                    {product.name}
-                  </span>
-                  <div className="flex gap-2">
-                    <span className="text-preset-3 font-normal text-grey-500 self-start">
-                      ${product.price.toFixed(2)} x 3
-                    </span>
-                    <span className="font-[16px] font-bold leading-[21px]  self-end">
-                      ${(product.price * 3).toFixed(2)}
-                    </span>
-                  </div>
-                </div>
-                <button type="button" className="cursor-pointer">
-                  <img src={deleteIcon} alt="Remove from cart icon" />
-                </button>
-              </div>
-            </div>
-            <button className="w-[312px] button-primary py-[15px]">
-              Checkout
-            </button>
-          </div>
+          {cartItems.length > 0 ? (
+            <ul>
+              {cartItems.map((item) => (
+                <li key={item.name}>
+                  <CartItem item={item} />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Your cart is empty.</p>
+          )}
         </div>
       )}
     </div>
