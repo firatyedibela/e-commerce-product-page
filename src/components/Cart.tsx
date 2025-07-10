@@ -31,13 +31,18 @@ export const Cart = () => {
           <div className="h-[1px] w-full bg-grey-100"></div>
           <div className="relative h-full">
             {cartItems.length > 0 ? (
-              <ul>
-                {cartItems.map((item) => (
-                  <li key={item.name}>
-                    <CartItem item={item} />
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-col gap-6 items-center">
+                <ul>
+                  {cartItems.map((item) => (
+                    <li key={item.name}>
+                      <CartItem item={item} />
+                    </li>
+                  ))}
+                </ul>
+                <button className="w-[312px] button-primary py-[15px] hover:bg-orange-300 transition-all duration-150">
+                  Checkout
+                </button>
+              </div>
             ) : (
               <p className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-preset-3 text-grey-500">
                 Your cart is empty.
