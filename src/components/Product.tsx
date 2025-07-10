@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { useCart } from '../context/CartContext';
 import { MobileSwiper } from './MobileSwiper';
 import { ImageGallery } from './ImageGallery';
 import type { TProduct } from '../types/product';
@@ -13,6 +13,22 @@ type ProductProps = {
 
 export const Product = ({ product }: ProductProps) => {
   const [quantity, setQuantity] = useState<number>(0);
+  const { cartItems, addToCart } = useCart();
+
+  console.log(cartItems);
+
+  const handleAddToCart = () => {
+    if (quantity <= 0) {
+      return;
+    }
+
+    addToCart({
+      name: product.name,
+      image: product.images[0].thumbnail,
+      finalPrice: getDiscountedPrice(product.price, product.discount),
+      quantity: quantity,
+    });
+  };
 
   const handleIncrease = () => {
     setQuantity((prev) => prev + 1);
@@ -72,7 +88,8 @@ export const Product = ({ product }: ProductProps) => {
 
           <button
             type="button"
-            className="w-full xl:w-[272px] py-4 flex items-center justify-center gap-4 button-primary shadow-2xl shadow-orange-500/50 "
+            onClick={handleAddToCart}
+            className="w-full xl:w-[272px] py-4 flex items-center justify-center gap-4 button-primary shadow-2xl shadow-orange-500/50"
           >
             <img
               className="filter-grey-950"
