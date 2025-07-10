@@ -21,13 +21,19 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cartItems, setCartItems] = useState<TCartItem[]>([]);
 
   const addToCart = (newItem: TCartItem) => {
-    const itemIdx = cartItems.findIndex((item) => item.name === newItem.name);
+    setCartItems((prevItems) => {
+      const itemExists = prevItems.some((item) => item.name === newItem.name);
 
-    if (itemIdx !== -1) {
-      cartItems[itemIdx].quantity += newItem.quantity;
-    } else {
-      setCartItems((prev) => [...prev, newItem]);
-    }
+      if (itemExists) {
+        return prevItems.map((item) =>
+          item.name === newItem.name
+            ? { ...item, quantity: item.quantity + newItem.quantity }
+            : item
+        );
+      } else {
+        return [...prevItems, newItem];
+      }
+    });
   };
 
   const removeFromCart = (itemName: string) => {
