@@ -47,6 +47,8 @@ export const Product = ({ product }: ProductProps) => {
       <ImageGallery
         className="hidden xl:flex xl:w-[448px]"
         images={product.images}
+        originalImageAltText={`Original image of ${product.name}`}
+        thumbnailAltText={`Thumbnail of ${product.name}`}
       />
 
       {/* Product Details Section */}

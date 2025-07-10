@@ -7,9 +7,16 @@ import { Lightbox } from './Lightbox';
 type ImageGalleryProps = {
   className: string;
   images: TImage[];
+  originalImageAltText: string;
+  thumbnailAltText: string;
 };
 
-export const ImageGallery = ({ className, images }: ImageGalleryProps) => {
+export const ImageGallery = ({
+  className,
+  images,
+  originalImageAltText,
+  thumbnailAltText,
+}: ImageGalleryProps) => {
   const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
   const [isLightbox, setLightbox] = useState<boolean>(false);
 
@@ -34,7 +41,7 @@ export const ImageGallery = ({ className, images }: ImageGalleryProps) => {
         <img
           className="rounded-[15px] cursor-pointer hover:shadow-xl transition-all duration-300"
           src={images[activeImageIndex].original}
-          alt=""
+          alt={originalImageAltText}
           onClick={() => setLightbox(true)}
         />
       </div>
@@ -44,7 +51,7 @@ export const ImageGallery = ({ className, images }: ImageGalleryProps) => {
             <li key={img.original}>
               <Thumbnail
                 image={img.thumbnail}
-                altText=""
+                altText={thumbnailAltText}
                 index={idx}
                 isSelected={idx === activeImageIndex}
                 onClick={handleThumbnailClick}
