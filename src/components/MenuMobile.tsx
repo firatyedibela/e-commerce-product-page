@@ -20,12 +20,12 @@ export const MenuMobile = ({ routes }: MenuMobileProps) => {
         <>
           {/* BACKDROP */}
           <div
-            className="absolute inset-0 bg-black opacity-50 z-20"
+            className="fixed inset-0 bg-black opacity-50 z-20"
             onClick={() => setOpen(false)}
           ></div>
 
           {/* MENU */}
-          <div className="absolute left-0 top-0 bottom-0 w-[250px] pl-6 bg-white z-20">
+          <div className="fixed left-0 top-0 bottom-0 w-[250px] pl-6 bg-white z-20">
             <ul className="flex flex-col gap-6 mt-[90px]">
               {routes.map((route) => (
                 <li key={route.name}>
