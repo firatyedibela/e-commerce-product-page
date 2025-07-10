@@ -19,7 +19,13 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (newItem: CartItem) => {
-    console.log('New item: ' + newItem);
+    const itemIdx = cartItems.findIndex((item) => item.name === newItem.name);
+
+    if (itemIdx !== -1) {
+      cartItems[itemIdx].quantity += newItem.quantity;
+    } else {
+      cartItems.push(newItem);
+    }
   };
 
   const removeFromCart = (itemName: string) => {
