@@ -37,7 +37,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const removeFromCart = (itemName: string) => {
-    console.log('Removing from cart: ' + itemName);
+    setCartItems((prevItems) => {
+      return prevItems.filter((item) => item.name !== itemName);
+    });
   };
 
   const getTotalItems = (): number => {
