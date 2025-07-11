@@ -26,7 +26,7 @@ export const Product = ({ product }: ProductProps) => {
 
     setAdding(true);
     await new Promise((resolve) => {
-      setTimeout(resolve, 1000);
+      setTimeout(resolve, 500);
     });
     setAdding(false);
 
