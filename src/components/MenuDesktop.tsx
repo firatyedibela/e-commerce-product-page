@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { TRoutes } from '../types/routes';
+import { AnimatePresence, motion } from 'motion/react';
 
 type MenuDesktopProps = {
   routes: TRoutes;
@@ -20,11 +21,16 @@ export const MenuDesktop = ({ routes }: MenuDesktopProps) => {
             href={route.href}
           >
             {route.name}
-            <div
-              className={`${
-                route.name === activeRoute ? 'flex' : 'hidden'
-              } w-full h-[4px] top-16 bg-orange-500 absolute`}
-            ></div>
+            <AnimatePresence>
+              {route.name === activeRoute && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  className="w-full h-[4px] top-16 bg-orange-500 absolute"
+                ></motion.div>
+              )}
+            </AnimatePresence>
           </a>
         </li>
       ))}
