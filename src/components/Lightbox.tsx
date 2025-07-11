@@ -20,6 +20,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import { Navigation, Thumbs } from 'swiper/modules';
 
+import { motion } from 'motion/react';
+
 import { NavButton } from './NavButton';
 
 type LightboxProps = {
@@ -53,12 +55,21 @@ export const Lightbox = ({
 
   return createPortal(
     // Overlay covers the entire screen, clicking it (outside the lightbox) closes the lightbox
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       className="overlay hidden fixed inset-0 bg-lightbox-overlay xl:flex items-center justify-center"
       onClick={onClose}
     >
       {/* Lightbox container, stop propagation otherwise clicks close lightbox */}
-      <div className="w-[550px] relative" onClick={(e) => e.stopPropagation()}>
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0 }}
+        className="w-[550px] relative"
+        onClick={(e) => e.stopPropagation()}
+      >
         <NavButton
           direction="prev"
           className="lightboxPrev w-14 h-14 translate-y-[-105px] left-[-20px]"
@@ -122,8 +133,8 @@ export const Lightbox = ({
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-    </div>,
+      </motion.div>
+    </motion.div>,
     lightboxRoot as Element
   );
 };

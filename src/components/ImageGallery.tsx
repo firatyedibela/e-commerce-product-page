@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { clsx } from 'clsx';
 import type { TImage } from '../types/product';
@@ -30,13 +31,16 @@ export const ImageGallery = ({
 
   return (
     <div className={clsx(className, 'flex-col gap-8')}>
-      {isLightbox && (
-        <Lightbox
-          images={images}
-          currentImageIndex={activeImageIndex}
-          onClose={handleLightboxClose}
-        />
-      )}
+      <AnimatePresence>
+        {isLightbox && (
+          <Lightbox
+            images={images}
+            currentImageIndex={activeImageIndex}
+            onClose={handleLightboxClose}
+          />
+        )}
+      </AnimatePresence>
+
       <div>
         <img
           className="rounded-[15px] cursor-pointer hover:shadow-xl transition-all duration-300"
