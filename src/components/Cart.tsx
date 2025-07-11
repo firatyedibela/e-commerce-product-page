@@ -17,7 +17,7 @@ export const Cart = () => {
   };
 
   return (
-    <div className="flex">
+    <div ref={ref} className="flex">
       <button onClick={handleCartClick} className="cursor-pointer relative">
         <img className="cart-icon" src={cart} alt="Shopping cart icon" />
         {cartItems.length > 0 && (
@@ -29,10 +29,7 @@ export const Cart = () => {
         )}
       </button>
       {isOpen && (
-        <div
-          ref={ref}
-          className="w-[360px] h-[256px] bg-white rounded-[10px] py-6 shadow-2xl absolute top-[57px] left-2 md:top-[66px] md:-translate-x-1/2 flex flex-col gap-6"
-        >
+        <div className="w-[360px] h-[256px] bg-white rounded-[10px] py-6 shadow-2xl absolute top-[57px] left-2 md:top-[66px] md:-translate-x-1/2 flex flex-col gap-6">
           <div className="px-3">
             <span className="text-preset-3 text-grey-950">Cart</span>
           </div>
