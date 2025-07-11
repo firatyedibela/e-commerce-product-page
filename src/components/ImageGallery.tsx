@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { clsx } from 'clsx';
 import type { TImage } from '../types/product';
