@@ -16,7 +16,7 @@ export const Thumbnail = ({
   index,
 }: ThumbnailProps) => {
   const baseStyles =
-    'w-22 h-22 cursor-pointer rounded-[10px] overflow-hidden box-content border-2  ';
+    'w-22 h-22 cursor-pointer rounded-[10px] overflow-hidden box-content border-2';
 
   const handleClick = () => {
     onClick(index);
@@ -30,14 +30,16 @@ export const Thumbnail = ({
         isSelected ? 'border-orange-500' : 'border-transparent'
       )}
     >
-      <img
-        className={clsx(
-          'transition-all duration-150',
-          isSelected ? 'opacity-25' : 'hover:opacity-50'
-        )}
-        src={image}
-        alt={altText}
-      />
+      <div className="bg-white">
+        <img
+          className={clsx(
+            'transition-all duration-150',
+            isSelected ? 'opacity-35' : 'hover:opacity-50'
+          )}
+          src={image}
+          alt={altText}
+        />
+      </div>
     </button>
   );
 };
