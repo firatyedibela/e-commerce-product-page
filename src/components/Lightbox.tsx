@@ -79,6 +79,7 @@ export const Lightbox = ({
           className="lightboxNext w-14 h-14 translate-y-[-105px] right-[-20px]"
         />
         <button
+          type="button"
           onClick={onClose}
           className="absolute z-10 right-0 -top-10 cursor-pointer mb-6"
         >

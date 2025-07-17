@@ -24,6 +24,7 @@ export const Thumbnail = ({
 
   return (
     <button
+      type="button"
       onClick={handleClick}
       className={clsx(
         baseStyles,

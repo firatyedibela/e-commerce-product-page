@@ -19,7 +19,11 @@ export const Cart = () => {
 
   return (
     <div ref={ref} className="flex">
-      <button onClick={handleCartClick} className="cursor-pointer relative">
+      <button
+        type="button"
+        onClick={handleCartClick}
+        className="cursor-pointer relative"
+      >
         <img className="cart-icon" src={cart} alt="Shopping cart icon" />
         {cartItems.length > 0 && (
           <div className="w-[19px] h-[13px] rounded-[6.5px] bg-orange-500 flex items-center justify-center absolute -top-1 -right-1">
@@ -51,7 +55,10 @@ export const Cart = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className="w-[312px] button-primary py-[15px] hover:bg-orange-300 transition-all duration-150">
+                  <button
+                    type="button"
+                    className="w-[312px] button-primary py-[15px] hover:bg-orange-300 transition-all duration-150"
+                  >
                     Checkout
                   </button>
                 </div>

@@ -13,8 +13,8 @@ export const NavButton = ({ direction, className }: NavButtonProps) => {
 
   return (
     <button
-      className={clsx(baseStyles, directionalStyles, className)}
       type="button"
+      className={clsx(baseStyles, directionalStyles, className)}
     >
       <NavSvg next={next} />
     </button>

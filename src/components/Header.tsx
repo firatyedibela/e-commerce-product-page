@@ -17,7 +17,7 @@ export const Header = () => {
       </div>
       <div className="flex gap-6 md:gap-12 items-center md:relative">
         <Cart />
-        <button className="cursor-pointer">
+        <button type="button" className="cursor-pointer">
           <img
             className="w-6 h-6 md:w-[50px] md:h-[50px] border-2 rounded-full border-transparent hover:border-orange-500 transition-all duration-150"
             src={avatar}
