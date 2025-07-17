@@ -7,6 +7,7 @@ import { getDiscountedPrice } from '../utils/getDiscountedPrice';
 import { QuantityBox } from './QuantityBox';
 import cartIcon from '../assets/images/icon-cart.svg';
 import { MoonLoader } from 'react-spinners';
+import clsx from 'clsx';
 
 type ProductProps = {
   product: TProduct;
@@ -26,7 +27,7 @@ export const Product = ({ product }: ProductProps) => {
 
     setAdding(true);
     await new Promise((resolve) => {
-      setTimeout(resolve, 500);
+      setTimeout(resolve, 1000);
     });
     setAdding(false);
 
@@ -99,10 +100,14 @@ export const Product = ({ product }: ProductProps) => {
           <button
             type="button"
             onClick={handleAddToCart}
-            className="w-full xl:w-[272px] py-4 flex items-center justify-center gap-4 button-primary shadow-2xl shadow-orange-500/50 hover:bg-orange-300 transition-all duration-150"
+            disabled={isAdding}
+            className={clsx(
+              'w-full xl:w-[272px] py-4 flex items-center justify-center gap-4 button-primary shadow-2xl shadow-orange-500/50 hover:bg-orange-300 transition-all duration-150',
+              isAdding && 'cursor-default'
+            )}
           >
             {isAdding ? (
-              <MoonLoader size={20} />
+              <MoonLoader speedMultiplier={0.8} size={20} />
             ) : (
               <>
                 <img
