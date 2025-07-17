@@ -64,7 +64,7 @@
   }
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 67.5rem) {
   .nav-btn:hover > svg {
     filter: brightness(0) saturate(100%) invert(40%) sepia(45%) saturate(2991%)
       hue-rotate(4deg) brightness(97%) contrast(90%);
