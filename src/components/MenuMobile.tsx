@@ -76,8 +76,8 @@ const menuAnimation = {
 };
 
 const listItemAnimation = {
-  initial: { scale: 0, opacity: 0 },
-  animate: { scale: 1, opacity: 1 },
+  initial: { scale: 0, opacity: 0, x: '-150px' },
+  animate: { scale: 1, opacity: 1, x: '0' },
   transition: {
     type: spring,
     stiffness: 260,
