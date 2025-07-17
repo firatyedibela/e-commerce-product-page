@@ -111,7 +111,11 @@ export const Lightbox = ({
         >
           {images.map((img) => (
             <SwiperSlide>
-              <img className="max-w-[550px] " src={img.original} alt="" />
+              <img
+                className="max-w-[550px] "
+                src={img.original}
+                alt="Product image"
+              />
             </SwiperSlide>
           ))}
         </Swiper>

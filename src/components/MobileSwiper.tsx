@@ -30,6 +30,7 @@ export const MobileSwiper = ({ images, className }: MobileSwiperProps) => {
             <img
               className={`w-full h-[300px] object-cover object-top md:h-[290px] ${className}`}
               src={img.original}
+              alt="Product image"
             ></img>
           </SwiperSlide>
         ))}
