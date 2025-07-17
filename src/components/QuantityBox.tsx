@@ -22,11 +22,7 @@ export const QuantityBox = ({
       >
         <img src={iconMinus} alt="Minus icon" />
       </button>
-      <span
-        aria-live="polite"
-        aria-label="Item quantity"
-        className="text-preset-3 text-grey-950"
-      >
+      <span aria-live="polite" className="text-preset-3 text-grey-950">
         {quantity}
       </span>
       <button
