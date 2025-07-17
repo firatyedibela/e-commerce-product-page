@@ -30,7 +30,7 @@ export const Thumbnail = ({
         isSelected ? 'border-orange-500' : 'border-transparent'
       )}
     >
-      <div className="bg-white">
+      <span className="block bg-white">
         <img
           className={clsx(
             'transition-all duration-150',
@@ -39,7 +39,7 @@ export const Thumbnail = ({
           src={image}
           alt={altText}
         />
-      </div>
+      </span>
     </button>
   );
 };
